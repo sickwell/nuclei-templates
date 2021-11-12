@@ -2173,14 +2173,6 @@ requests:
         part: body
 
       - type: regex
-        name: font-awesome
-        regex:
-          - <link[^>]* href=[^>]+(?:([\d.]+)/)?(?:css/)?font-awesome(?:\.min)?\.css
-          - <link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\d]+(?:.[\d]+(?:.[\d]+)?)?)|)
-        condition: or
-        part: body
-
-      - type: regex
         name: disqus
         regex:
           - <div[^>]+id="disqus_thread"
@@ -2303,13 +2295,6 @@ requests:
         name: adzerk
         regex:
           - <iframe [^>]*src="[^"]+adzerk\.net
-        condition: or
-        part: body
-
-      - type: regex
-        name: bootstrap-table
-        regex:
-          - <link[^>]+href="[^>]*bootstrap-table(?:\.min)?\.css
         condition: or
         part: body
 
@@ -2699,13 +2684,6 @@ requests:
         part: body
 
       - type: regex
-        name: google-font-api
-        regex:
-          - <link[^>]* href=[^>]+fonts\.(?:googleapis|google)\.com
-        condition: or
-        part: body
-
-      - type: regex
         name: indexhibit
         regex:
           - <(?:link|a href) [^>]+ndxz-studio
@@ -2906,14 +2884,6 @@ requests:
           - "Set-Cookie: laravel_session="
         part: header
 
-
-      - type: word
-        name: express
-        words:
-          - "X-Powered-By: Express"
-        part: header
-
-
       - type: word
         name: rails
         words:
@@ -2968,18 +2938,6 @@ requests:
         part: header
 
       - type: word
-        name: ms-iis
-        words:
-          - "Microsoft-IIS"
-        part: header
-
-      - type: word
-        name: ms-httpapi
-        words:
-          - "Microsoft-HTTPAPI"
-        part: header
-
-      - type: word
         name: tomcat
         words:
           - "Tomcat"
@@ -3013,21 +2971,6 @@ requests:
         name: jetty
         words:
           - "Jetty"
-        part: header
-
-
-      - type: word
-        name: nginx
-        words:
-          - "Server: nginx"
-        part: header
-
-
-      - type: word
-        name: php
-        words:
-          - "X-Powered-By: PHP"
-          - "PHPSESSID"
         part: header
 
       - type: word
