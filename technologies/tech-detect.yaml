@@ -2268,16 +2268,6 @@ requests:
         part: body
 
       - type: regex
-        name: bootstrap
-        regex:
-          - <style>/\*!\* Bootstrap v(\d\.\d\.\d)
-          - <link[^>]+?href=[^"]/css/([\d.]+)/bootstrap\.(?:min\.)?css
-          - <link[^>]+?href="[^"]*bootstrap(?:\.min)?\.css
-          - <div[^>]+class="[^"]*glyphicon glyphicon-
-        condition: or
-        part: body
-
-      - type: regex
         name: combeenation
         regex:
           - <iframe[^>]+src="[^>]+portal\.combeenation\.com
@@ -2636,15 +2626,6 @@ requests:
         name: mermaid
         regex:
           - <div [^>]*class=["']mermaid["']>
-        condition: or
-        part: body
-
-      - type: regex
-        name: aurelia
-        regex:
-          - <[^>]+aurelia-app=[^>]
-          - <[^>]+data-main=[^>]aurelia-bootstrapper
-          - <[^>]+au-target-id=[^>]\d
         condition: or
         part: body
 
@@ -3117,3 +3098,4 @@ requests:
         words:
           - "ThinkPHP"
         part: header
+
